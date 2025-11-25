@@ -27,6 +27,7 @@ app/
 ├── data/
 │   ├── api/
 │   │   └── ExpenseApi.kt           # Retrofit API interface
+│   │   └── RetrofitClient.kt       # Retrofit API Client
 │   ├── model/
 │   │   └── Expense.kt              # Data models
 │   └── repository/
@@ -66,14 +67,12 @@ app/
 
 1. **Clone or download this project**
 
-2. **Update API Base URL**
+2. **Point Retrofit to your backend**
    
-   Open `app/src/main/java/com/ragnar/expesetracker/data/api/ExpenseApi.kt`
+   Open `app/src/main/java/com/ragnar/expensetracker/data/api/RetrofitClient.kt`
    
-   Replace the BASE_URL with your actual API endpoint:
-   ```kotlin
-   private const val BASE_URL = "https://localhost:8080/"
-   ```
+   Update the `BASE_URL` to match the Spring Boot server that exposes `/auth` and `/expenses`.  
+   Use the machine address that the Android emulator/device can reach (e.g. `http://192.168.x.x:8080/`), not `localhost`.
 
 3. **Sync Gradle**
    
@@ -82,6 +81,10 @@ app/
 4. **Run the app**
    
    Click the "Run" button or press `Shift + F10`
+
+5. **Make sure the backend is online**
+   
+   Start the Spring Boot project (`ExpenseManager_Backend`) so the Android client can authenticate and sync expenses. The emulator/device and backend host must be on the same network.
 
 ## 🔧 Configuration
 
@@ -117,6 +120,15 @@ The app expects the following API endpoints:
   "date": "2025-01-12",
   "category": "Food",
   "userId": "user-123"
+}
+```
+
+**Auth Response:**
+```json
+{
+  "message": "Login successful",
+  "userId": "user-123",
+  "token": "user-123"
 }
 ```
 
