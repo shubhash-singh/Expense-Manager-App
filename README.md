@@ -54,6 +54,17 @@ app/
 │
 └── MainActivity.kt                  # Single Activity
 ```
+---
+
+## Screenshots
+
+<p align="center">
+  <img src="screenshots/LoginScreen.jpg" width="180"/>
+  <img src="screenshots/SignUpScreen.jpg" width="180"/>
+  <img src="screenshots/HomeScreen.jpg" width="180"/>
+  <img src="screenshots/AddExpenseScreen.jpg" width="180"/>
+  <img src="screenshots/DashboardScreen.jpg" width="180"/>
+</p>
 
 ## 🚀 Getting Started
 
